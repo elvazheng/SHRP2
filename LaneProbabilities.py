@@ -20,7 +20,7 @@ for filename in filenames:
                 'vtti.right_marker_probability', 'vtti.light_level'], error_bad_lines = False, low_memory= False) 
     
     print filename            
-    #create a column in the dataframe for the integer representing trip id
+    
     file_id = float(df['vtti.file_id'][:1])
     f_list = []
     df_id = pd.DataFrame([[int(file_id)]],columns = ['file_id'])
