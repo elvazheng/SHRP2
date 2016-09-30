@@ -3,8 +3,8 @@ import numpy as np
 import glob
 import matplotlib.pyplot as plt
 
-#was thinking about concatenating the entire SHRP2 and running that through the code starting at line 13
-#
+#was thinking about concatenating the entire SHRP2 and running that through the code starting at line 13 instead of 
+#running each file individually through a loop
 filenames = glob.glob('Y:\TimeSeriesExport\*.csv') 
 #for every 10 values of system time, plot the greater of the average of marker probabilities and variance of lane offset
 for filename in filenames:     
