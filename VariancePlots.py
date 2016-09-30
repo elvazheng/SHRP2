@@ -3,6 +3,8 @@ import numpy as np
 import glob
 import matplotlib.pyplot as plt
 
+#was thinking about concatenating the entire SHRP2 and running that through the code starting at line 13
+#
 filenames = glob.glob('Y:\TimeSeriesExport\*.csv') 
 #for every 10 values of system time, plot the greater of the average of marker probabilities and variance of lane offset
 for filename in filenames:     
@@ -23,6 +25,10 @@ for filename in filenames:
     x_value_frame['larger_probability'] = x_value_frame[['vtti.left_marker_probability','vtti.right_marker_probability']].max(axis=1) 
     x = pd.Series(data=x_value_frame['larger_probability'])
     
-
+    scatter_plot = plt.plot(x,y) 
+    scatter_plot.show()
+    
     df2 = pd.concat([x,y], axis=1).reset_index()
     df2.to_csv('H:\Var.csv') 
+    
+    
